@@ -19,7 +19,6 @@ export default function Meals() {
         console.error("Fetch error:", error);
       }
     }
-
     fetchMeals();
   }, []);
   
