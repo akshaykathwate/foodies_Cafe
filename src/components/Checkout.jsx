@@ -4,6 +4,7 @@ import { UserProgressContext } from "../store/UserProgressContext";
 import Button from "./UI/Button";
 import Input from "./UI/Input";
 import Modal from "./UI/Modal";
+import toast from "react-hot-toast";
 
 export default function Checkout() {
   const cartCtx = useContext(CartContext);
@@ -22,8 +23,8 @@ export default function Checkout() {
     event.preventDefault();
     const fd = new FormData(event.target);
     const customerData =Object.fromEntries(fd.entries());
+    console.log(customerData);
   }
-
   return (
     <Modal open={userProgressCtx.progress === "checkout"}>
       <form onSubmit={handleSubmit}>
@@ -42,7 +43,12 @@ export default function Checkout() {
           <Button textOnly onClick={handleClose}>
             Close
           </Button>
-          <Button type="submit">Submit Order</Button>
+          <Button
+            type="submit"
+            onClick={() => toast.success("Order Confirmed !")}
+          >
+            Submit Order
+          </Button>
         </p>
       </form>
     </Modal>

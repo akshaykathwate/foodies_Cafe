@@ -6,18 +6,20 @@ import {UserProgressContextProvider} from "./store/UserProgressContext.jsx";
 import Modal from "./components/UI/Modal.jsx";
 import Cart from "./components/Cart.jsx";
 import Checkout from "./components/Checkout.jsx";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
 
   return (
-    <UserProgressContextProvider>
-      <CartContextProvider>
-        <Header />
-        <Meals />
-        <Cart/>
-        <Checkout/>
-      </CartContextProvider>
-    </UserProgressContextProvider>
+      <UserProgressContextProvider>
+        <CartContextProvider>
+          <Header />
+          <Meals />
+          <Cart />
+          <Checkout />
+          <Toaster/>
+        </CartContextProvider>
+      </UserProgressContextProvider>
   );
 };
 
