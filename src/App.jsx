@@ -5,6 +5,7 @@ import { CartContextProvider } from "./store/CartContext.jsx";
 import {UserProgressContextProvider} from "./store/UserProgressContext.jsx";
 import Modal from "./components/UI/Modal.jsx";
 import Cart from "./components/Cart.jsx";
+import Checkout from "./components/Checkout.jsx";
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
         <Header />
         <Meals />
         <Cart/>
+        <Checkout/>
       </CartContextProvider>
     </UserProgressContextProvider>
   );
